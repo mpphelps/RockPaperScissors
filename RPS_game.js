@@ -21,19 +21,16 @@ function gameRound(playerSelection, computerSelection) {
         case "RockRock":
         case "PaperPaper":
         case "PaperPaper":
-            roundNumber+=1;
             return "It's a tie";
         case "RockPaper":
         case "PaperScissors":
         case "ScissorsRock":
             computerScore+=1;
-            roundNumber+=1;
             return "You Lose!"
         case "PaperRock":
         case "ScissorsPaper":
         case "RockScissors":
             playerScore+=1;
-            roundNumber+=1;
             return "You Win!";
     }
 
@@ -57,7 +54,7 @@ function gameRound(playerSelection, computerSelection) {
     
  }
 
- function playerPlay(){
+ function playGame(){
      //keep running the game until out of rounds
      while(roundNumber<=gameRounds) {
         //modify playerChoice so that first letter is capitalized and all remaining chars are lowercase
@@ -71,8 +68,9 @@ function gameRound(playerSelection, computerSelection) {
             continue;
         }
         roundOutcome = gameRound(playerChoice,computerPlay());
-        console.log("Round ", gameRound,": ", roundOutcome);
+        console.log("Round ", roundNumber,": ", roundOutcome);
         console.log("Player Score: ", playerScore, "Computer Score: ", computerScore)
+        roundNumber+=1;
      }
      if (computerScore>playerScore) {
         resetGame();
