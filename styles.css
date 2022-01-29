@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    background-color: rgb(253, 230, 222);
+    display: flex;
+    align-content: center;
+}
+
+#main {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    
+}
+
+.gameContainer {
+    width: 500px;
+    height: 150px;
+    display: flex;
+    
+}
+
+.resultsContainer {
+    width: 500px;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+button {
+    flex: 1;
+    height: 100px;
+    font-family: Roboto;
+    font-size: 30px;
+    font-weight: bold;
+    border-color: coral;
+    border-style: revert;
+    border-radius: 10px;
+    border-width: 10px;
+    
+}
+
+#btnRock {
+    background-color: brown;
+    color: #5AD5D5;
+}
+
+#btnPaper {
+    background-color: cornsilk;
+    color: #000723;
+}
+
+#btnScissors {
+    background-color: cadetblue;
+    color: #A0615F;
+}
+

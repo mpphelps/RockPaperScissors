@@ -3,12 +3,42 @@
     <head>
         <meta charset="UTF-8">
         <title>Rock Paper Scissors</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="RPS_game.js" defer></script>
     </head>
     <body>
-        <h1>
-            Rock Paper Scissors Game
-        </h1>
-        <p>To play, open console and type playGame()</p>
-        <script type="text/javascript" src="RPS_game.js"></script>
+        <div id="main">
+            <h1 style="text-align: center;">
+                Rock Paper Scissors Game
+            </h1>
+            <!---<p>To play, open console and type playGame()</p>--->
+
+            <div class="gameContainer">
+                <button class="gameButton" id="btnRock">Rock</button>
+                <button class="gameButton" id="btnPaper">Paper</button>
+                <button class="gameButton" id="btnScissors">Scissors</button>
+            </div>
+            <div>
+                Computer Choice: <span id="computerChoice"></span>
+            </div>
+            <div class="resultsContainer">
+                <div>
+                    Computer Score: <span id="computerScore">0</span>
+                </div>
+                <div>
+                    Player Score: <span id="playerScore">0</span>
+                </div>
+                <div>
+                    Tie Count: <span id="tieCount">0</span>
+                </div>
+                <div>
+                    Round: <span id="roundNumber">0</span>
+                </div>
+            </div>
+            <div id="gameResult" style="text-align: center;">
+                Play Game
+            </div>
+            <button class="gameButton" id="btnResetGame">Reset Game?</button>
+        </div>
     </body>
 </html>
