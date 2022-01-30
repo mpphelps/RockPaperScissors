@@ -8,18 +8,21 @@
     </head>
     <body>
         <div id="main">
-            <h1 style="text-align: center;">
-                Rock Paper Scissors Game
+            <h1 id="header1">
+                Rock Paper Scissors
             </h1>
             <!---<p>To play, open console and type playGame()</p>--->
 
             <div class="gameContainer">
-                <button class="gameButton" id="btnRock">Rock</button>
-                <button class="gameButton" id="btnPaper">Paper</button>
-                <button class="gameButton" id="btnScissors">Scissors</button>
+                <input type="image" src="Images/Rock.png" name="Rock" class="gameButton" id="btnRock" />
+                <input type="image" src="Images/Paper.png" name="Paper" class="gameButton" id="btnPaper" />
+                <input type="image" src="Images/Scissors.png" name="Scissors" class="gameButton" id="btnScissors" />
             </div>
-            <div>
-                Computer Choice: <span id="computerChoice"></span>
+            <div id="computerChoice">
+                <div style="align-self: center; padding-right: 10px;">
+                    Computer Choice:
+                </div>
+                <img src="" alt="" id="computerImg" >
             </div>
             <div class="resultsContainer">
                 <div>
@@ -32,13 +35,13 @@
                     Tie Count: <span id="tieCount">0</span>
                 </div>
                 <div>
-                    Round: <span id="roundNumber">0</span>
+                    Round: <span id="roundNumber"></span>
                 </div>
             </div>
             <div id="gameResult" style="text-align: center;">
                 Play Game
             </div>
-            <button class="gameButton" id="btnResetGame">Reset Game?</button>
+            <button class="resetButton" id="btnResetGame">Reset Game?</button>
         </div>
     </body>
 </html>

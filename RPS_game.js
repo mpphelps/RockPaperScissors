@@ -11,7 +11,9 @@ function computerPlay() {
     //calculates a random number from 0 to 2, and selects an option from the RPS string array
     let randomNumber = Math.floor(Math.random()*3);
     console.log("computerChoice: ", RPS[randomNumber]);
-    computerChoice_element.textContent = RPS[randomNumber];
+    //computerChoice_element.textContent = RPS[randomNumber];
+    computerChoice_img.src = `Images/${RPS[randomNumber]}.png`
+    //computerChoice_element.appendChild(computerChoice_img);
     return RPS[randomNumber];
 }
 
@@ -72,11 +74,6 @@ function playGame(playerChoice){
         roundOutcome = gameRound(playerChoice,computerPlay());
         console.log("Round ", roundNumber,": ", roundOutcome);
         console.log("Player Score: ", playerScore, "Computer Score: ", computerScore)
-    
-        computerScore_element.textContent = computerScore;
-        playerScore_element.textContent = playerScore;
-        tieCount_element.textContent = tieCount;
-        roundNumber_element.textContent = roundNumber;
         
         // if game rounds = 5 then check who is winner
         console.log("roundNumber: ", roundNumber, "gameRounds: ", gameRounds);
@@ -90,6 +87,11 @@ function playGame(playerChoice){
             }
         }
         roundNumber+=1;
+        if (roundNumber>gameRounds){roundNumber_element.textContent = "Game Over"}
+        else {roundNumber_element.textContent = roundNumber + " of " + gameRounds;}        
+        computerScore_element.textContent = computerScore;
+        playerScore_element.textContent = playerScore;
+        tieCount_element.textContent = tieCount;
     }
 
 }
@@ -103,8 +105,9 @@ function resetGame() {
     computerScore_element.textContent = computerScore;
     playerScore_element.textContent = playerScore;
     tieCount_element.textContent = tieCount;
-    roundNumber_element.textContent = roundNumber;
-    computerChoice_element.textContent = "";
+    roundNumber_element.textContent = roundNumber + " of " + gameRounds;;
+    //computerChoice_element.textContent = "";
+    computerChoice_img.src = "";
 }
 
 
@@ -133,6 +136,9 @@ const roundNumber_element = document.querySelector('#roundNumber');
 const tieCount_element = document.querySelector('#tieCount');
 const gameResult_element = document.querySelector('#gameResult');
 const computerChoice_element = document.querySelector('#computerChoice');
+const computerChoice_img = document.querySelector("#computerImg");
 
+//initialize game round
+roundNumber_element.textContent = roundNumber + " of " + gameRounds;
 
 
