@@ -90,6 +90,7 @@ function resetGame() {
     tieCount_element.textContent = tieCount;
     roundNumber_element.textContent = roundNumber + " of " + gameRounds;
     computerChoice_img.src = "";
+    playerChoice_img.src = "";
 }
 
 
