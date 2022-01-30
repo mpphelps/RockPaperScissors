@@ -11,34 +11,45 @@
             <h1 id="header1">
                 Rock Paper Scissors
             </h1>
-            <!---<p>To play, open console and type playGame()</p>--->
-
             <div class="gameContainer">
                 <input type="image" src="Images/Rock.png" name="Rock" class="gameButton" id="btnRock" />
                 <input type="image" src="Images/Paper.png" name="Paper" class="gameButton" id="btnPaper" />
                 <input type="image" src="Images/Scissors.png" name="Scissors" class="gameButton" id="btnScissors" />
             </div>
-            <div id="computerChoice">
-                <div style="align-self: center; padding-right: 10px;">
-                    Computer Choice:
+            <div class="scoreContainer">
+                <div>
+                    <div style="text-align: center;">
+                        YOU
+                    </div>
+                    <div class="moveDisplay">
+                        <img src="" alt="" id="playerImg" >    
+                    </div>
                 </div>
-                <img src="" alt="" id="computerImg" >
+                <div class="resultsContainer">
+                    <div>
+                        Computer Score: <span id="computerScore">0</span>
+                    </div>
+                    <div>
+                        Player Score: <span id="playerScore">0</span>
+                    </div>
+                    <div>
+                        Tie Count: <span id="tieCount">0</span>
+                    </div>
+                    <div>
+                        Round: <span id="roundNumber"></span>
+                    </div>
+                </div>
+                <div>
+                    <div style="text-align: center;">
+                        CPU
+                    </div>
+                    <div class="moveDisplay">
+                        <img src="" alt="" id="computerImg" >
+                    </div>
+                </div>
             </div>
-            <div class="resultsContainer">
-                <div>
-                    Computer Score: <span id="computerScore">0</span>
-                </div>
-                <div>
-                    Player Score: <span id="playerScore">0</span>
-                </div>
-                <div>
-                    Tie Count: <span id="tieCount">0</span>
-                </div>
-                <div>
-                    Round: <span id="roundNumber"></span>
-                </div>
-            </div>
-            <div id="gameResult" style="text-align: center;">
+
+            <div id="gameResult" style="text-align: center; margin-top: 20px;">
                 <p></p>
             </div>
             <button class="resetButton" id="btnResetGame">Reset Game?</button>

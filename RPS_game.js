@@ -11,9 +11,7 @@ function computerPlay() {
     //calculates a random number from 0 to 2, and selects an option from the RPS string array
     let randomNumber = Math.floor(Math.random()*3);
     console.log("computerChoice: ", RPS[randomNumber]);
-    //computerChoice_element.textContent = RPS[randomNumber];
     computerChoice_img.src = `Images/${RPS[randomNumber]}.png`
-    //computerChoice_element.appendChild(computerChoice_img);
     return RPS[randomNumber];
 }
 
@@ -24,39 +22,23 @@ function gameRound(playerSelection, computerSelection) {
     switch (selection) {
         case "RockRock":
         case "PaperPaper":
-        case "PaperPaper":
+        case "ScissorsScissors":
             tieCount+=1;
-            return "It's a tie";
+            gameResult_element.textContent = "This round is a tie";
+            break;
         case "RockPaper":
         case "PaperScissors":
         case "ScissorsRock":
             computerScore+=1;
-            return "You Lose!"
+            gameResult_element.textContent = "CPU won this round";
+            break;
         case "PaperRock":
         case "ScissorsPaper":
         case "RockScissors":
             playerScore+=1;
-            return "You Win!";
+            gameResult_element.textContent = "You won this round!";
+            break;
     }
-
-    /*
-    // This method applies several if statements, could work this to be even cleaner by nesting if statements.
-    if (playerSelection == "Rock" && computerSelection == "Rock") {return "It's a tie";}
-    if (playerSelection == "Paper" && computerSelection == "Paper") {return "It's a tie";}
-    if (playerSelection == "Scissors" && computerSelection == "Scissors") {return "It's a tie";}
-
-    if (playerSelection == "Rock" && computerSelection == "Paper") {return "You Lose! Paper beats Rock";}
-    if (playerSelection == "Paper" && computerSelection == "Rock") {return "You Win! Paper beats Rock";
-    }
-
-    if (playerSelection == "Scissors" && computerSelection == "Paper") {return "You Win! Scissors beats Paper";}
-    if (playerSelection == "Paper" && computerSelection == "Scissors") {return "You Lose! Scissors beats Paper";}
-
-    if (playerSelection == "Rock" && computerSelection == "Scissors") {return "You Win! Rock beats Scissors";}
-    if (playerSelection == "Scissors" && computerSelection == "Rock") {return "You Lose! Rock beats Scissors";}
-    */
-    return "Something unexpected happened";
-    
  }
 
 function playGame(playerChoice){
@@ -72,6 +54,7 @@ function playGame(playerChoice){
 
     if(roundNumber<=gameRounds) {
         roundOutcome = gameRound(playerChoice,computerPlay());
+        playerChoice_img.src = `Images/${playerChoice}.png`
         console.log("Round ", roundNumber,": ", roundOutcome);
         console.log("Player Score: ", playerScore, "Computer Score: ", computerScore)
         
@@ -79,11 +62,11 @@ function playGame(playerChoice){
         console.log("roundNumber: ", roundNumber, "gameRounds: ", gameRounds);
         if (roundNumber === gameRounds) {
             if(computerScore > playerScore) {
-                gameResult_element.textContent = "The Computer Won!";
+                gameResult_element.textContent = "The Computer Won the Game!";
             } else if (playerScore > computerScore) {
-                gameResult_element.textContent = "You Won!";
+                gameResult_element.textContent = "You Won the Game!";
             } else {
-                gameResult_element.textContent = "Its a tie!";
+                gameResult_element.textContent = "This Game is a Tie!";
             }
         }
         roundNumber+=1;
@@ -105,8 +88,7 @@ function resetGame() {
     computerScore_element.textContent = computerScore;
     playerScore_element.textContent = playerScore;
     tieCount_element.textContent = tieCount;
-    roundNumber_element.textContent = roundNumber + " of " + gameRounds;;
-    //computerChoice_element.textContent = "";
+    roundNumber_element.textContent = roundNumber + " of " + gameRounds;
     computerChoice_img.src = "";
 }
 
@@ -135,8 +117,8 @@ const playerScore_element = document.querySelector('#playerScore');
 const roundNumber_element = document.querySelector('#roundNumber');
 const tieCount_element = document.querySelector('#tieCount');
 const gameResult_element = document.querySelector('#gameResult');
-const computerChoice_element = document.querySelector('#computerChoice');
 const computerChoice_img = document.querySelector("#computerImg");
+const playerChoice_img = document.querySelector("#playerImg");
 
 //initialize game round
 roundNumber_element.textContent = roundNumber + " of " + gameRounds;
