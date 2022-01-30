@@ -53,8 +53,8 @@ body {
 .moveDisplay {
     border-radius: 10px;
     border-style: solid;
-    border-color: yellow;
-    box-shadow: 0 0 10px yellowgreen;
+    border-color: rgba(255, 255, 0, 0.205);
+    box-shadow: 0 0 10px rgba(153, 205, 50, 0.205);
     height: 300px;
     width: 200px;
     text-align: center;
