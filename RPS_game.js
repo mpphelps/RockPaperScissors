@@ -68,6 +68,7 @@ function playGame(playerChoice){
             } else {
                 gameResult_element.textContent = "This Game is a Tie!";
             }
+            gameResult_element.classList.add('gameOver');
         }
         roundNumber+=1;
         if (roundNumber>gameRounds){roundNumber_element.textContent = "Game Over"}
@@ -93,6 +94,10 @@ function resetGame() {
     playerChoice_img.src = "";
 }
 
+function removeTransition(e) {
+    if(e.propertyName!=='transform') return; // skip if it's not a transform
+    this.classList.remove('gameOver');
+}
 
 const btnRock = document.querySelector('#btnRock');
 const btnPaper = document.querySelector('#btnPaper');
@@ -109,9 +114,10 @@ btnScissors.addEventListener('click', () => {
     playGame(RPS[2]);
 });
 btnResetGame.addEventListener('click', () => {
-    resetGame();
-    
+    resetGame(); 
 });
+
+
 
 const computerScore_element = document.querySelector('#computerScore');
 const playerScore_element = document.querySelector('#playerScore');
@@ -120,6 +126,8 @@ const tieCount_element = document.querySelector('#tieCount');
 const gameResult_element = document.querySelector('#gameResult');
 const computerChoice_img = document.querySelector("#computerImg");
 const playerChoice_img = document.querySelector("#playerImg");
+
+gameResult_element.addEventListener('transitionend', removeTransition);
 
 //initialize game round
 roundNumber_element.textContent = roundNumber + " of " + gameRounds;
