@@ -13,7 +13,7 @@ body {
     color: whitesmoke;
     font-size: 16px;
     font-weight: bold;
-    
+    flex-direction: column;
 }
 
 #header1 {
@@ -114,6 +114,14 @@ img {
     transform: scale(1.1);
     transition: all .3s;
     box-shadow: 0 0 10px yellowgreen;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #btnRock {
