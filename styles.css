@@ -3,11 +3,11 @@
 
 html {
     margin: 0;
-    height: auto;
+    height: 100%;
 }
 
 body {
-    background-color:darkslategray;
+    background-image:linear-gradient(darkslategray,rgb(24, 41, 41));
     display: flex;
     font-family: 'Press Start 2P', cursive;
     color: whitesmoke;
@@ -27,6 +27,7 @@ body {
 
 #main {
     margin: auto;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;   
     border-style: solid;
@@ -91,6 +92,8 @@ img {
     transition: all .3s;
     box-shadow: 0 0 10px yellowgreen;
 }
+
+
 
 .resetButton {
     font-family: Roboto;
