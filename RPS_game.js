@@ -72,7 +72,7 @@ function playGame(playerChoice){
         }
         roundNumber+=1;
         if (roundNumber>gameRounds){roundNumber_element.textContent = "Game Over"}
-        else {roundNumber_element.textContent = roundNumber + " of " + gameRounds;}        
+        else {roundNumber_element.textContent = "Round: " + roundNumber + " of " + gameRounds;}        
         computerScore_element.textContent = computerScore;
         playerScore_element.textContent = playerScore;
         tieCount_element.textContent = tieCount;
@@ -89,7 +89,7 @@ function resetGame() {
     computerScore_element.textContent = computerScore;
     playerScore_element.textContent = playerScore;
     tieCount_element.textContent = tieCount;
-    roundNumber_element.textContent = roundNumber + " of " + gameRounds;
+    roundNumber_element.textContent = "Round: " + roundNumber + " of " + gameRounds;
     computerChoice_img.src = "";
     playerChoice_img.src = "";
 }
@@ -130,6 +130,6 @@ const playerChoice_img = document.querySelector("#playerImg");
 gameResult_element.addEventListener('transitionend', removeTransition);
 
 //initialize game round
-roundNumber_element.textContent = roundNumber + " of " + gameRounds;
+roundNumber_element.textContent = "Round: " + roundNumber + " of " + gameRounds;
 
 
